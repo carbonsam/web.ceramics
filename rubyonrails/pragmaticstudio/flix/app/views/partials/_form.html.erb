@@ -1,0 +1,29 @@
+<%= form_with(model: movie, local: true) do |form| %>
+
+  <%= form.label :title, autofocus: true %>
+  <%= form.text_field :title %>
+
+  <%= form.label :description %>
+  <%= form.text_area :description, rows: 7 %>
+
+  <%= form.label :rating %>
+  <%= form.text_field :rating %>
+
+  <%= form.label :released_on %>
+  <%= form.date_field :released_on %>
+
+  <%= form.label :director %>
+  <%= form.text_field :director %>
+
+  <%= form.label :duration %>
+  <%= form.text_field :duration %>
+
+  <%= form.label :total_gross %>
+  <%= form.text_field :total_gross %>
+
+  <%= form.label :image_file_name %>
+  <%= form.text_field :image_file_name %>
+
+  <%= form.submit %>
+
+<% end %>
