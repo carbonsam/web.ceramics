@@ -4,12 +4,23 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+import { Grommet } from "grommet";
 
 export const meta: MetaFunction = () => {
-  return { title: "New Remix App" };
+  return { title: "Books App" };
+};
+
+const theme = {
+  global: {
+    font: {
+      family: "Lora",
+      size: "18px",
+      height: "20px",
+    },
+  },
 };
 
 export default function App() {
@@ -20,12 +31,24 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        {process.env.NODE_ENV === "development" && <LiveReload />}
+        <Grommet theme={theme}>
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          {process.env.NODE_ENV === "development" && <LiveReload />}
+        </Grommet>
       </body>
     </html>
   );
