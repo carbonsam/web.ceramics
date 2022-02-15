@@ -1,24 +1,22 @@
-import { useLoaderData } from "remix";
+import { Link, useLoaderData } from "remix";
+import { getPosts } from "~/lib/post";
+import type { Post } from "~/lib/post";
 
-export const loader = async () => {
-  return [
-    {
-      slug: "my-first-post",
-      title: "My First Post",
-    },
-    {
-      slug: "90s-mixtape",
-      title: "A Mixtape I Made Just For You",
-    },
-  ];
-};
+export const loader = async () => getPosts();
 
 export default function Posts() {
-  const posts = useLoaderData();
+  const posts = useLoaderData<Post[]>();
 
   return (
     <div>
       <h1>Posts</h1>
+      <ul>
+        {posts.map((p) => (
+          <li key={p.slug}>
+            <Link to={p.slug}>{p.title}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
