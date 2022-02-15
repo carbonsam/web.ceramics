@@ -1,15 +1,20 @@
 import { Box, Text, Form, Button, FormField, TextInput } from "grommet";
 import { FormSearch } from "grommet-icons";
 import { useState } from "react";
+import type { Book } from "~/lib/libraryService";
 
-import Book from "../components/book";
+import { getBooksBySearchTerm } from "~/lib/libraryService";
 
-const handleSubmit = async (term: string) => {
-  console.log(`Search for: "${term}"`);
-};
+import BookCard from "~/components/BookCard";
 
 export default function Index() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [books, setBooks] = useState<Book[]>([]);
+
+  const handleSubmit = async (term: string) => {
+    const books = await getBooksBySearchTerm(term);
+    setBooks(books);
+  };
 
   return (
     <Box pad="large" gap="medium">
@@ -44,24 +49,17 @@ export default function Index() {
       </Box>
 
       <Box gap="small" direction="column">
-        <Book
-          thumbnailSrc="https://covers.openlibrary.org/b/id/240726-M.jpg"
-          title="Title"
-          author="Author"
-          isLiked={true}
-        />
-        <Book
-          thumbnailSrc="https://covers.openlibrary.org/b/id/240726-M.jpg"
-          title="Title"
-          author="Author"
-          isLiked={true}
-        />
-        <Book
-          thumbnailSrc="https://covers.openlibrary.org/b/id/240726-M.jpg"
-          title="Title"
-          author="Author"
-          isLiked={true}
-        />
+        {books.length < 1 && <Text>No books</Text>}
+        {books.length > 0 &&
+          books.map((b, i) => (
+            <BookCard
+              key={`${b.key}-${i}`}
+              coverSrc={b.book_cover_url}
+              title={b.title}
+              authorName={b.author_name?.join(", ") ?? "Unknown"}
+              authorSrc={b.author_picture_url}
+            />
+          ))}
       </Box>
     </Box>
   );
