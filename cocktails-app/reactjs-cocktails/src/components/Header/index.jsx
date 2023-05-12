@@ -12,17 +12,10 @@ const Header = () => (
       </ul>
       <ul>
         <li>
-          <Link to="/browse">Browse</Link>
-        </li>
-        <li>
           <Link to="/search">Search</Link>
         </li>
-      </ul>
-      <ul>
         <li>
-          <Link to="/browse" role="button" className="outline">
-            My Favorites
-          </Link>
+          <Link to="/favorites">Favorites</Link>
         </li>
       </ul>
     </nav>
