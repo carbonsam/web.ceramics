@@ -1,8 +1,7 @@
-import { Link, useLoaderData, useParams } from "react-router-dom";
-import { getTitleCaseFromSlug } from "../utils/stringUtils";
+import { Link, useLoaderData } from "react-router-dom";
+import { getTitleCaseFromSlug, slugify } from "../utils/stringUtils";
 
 const Drink = () => {
-  const { categoryId } = useParams();
   const data = useLoaderData();
 
   return (
@@ -13,8 +12,8 @@ const Drink = () => {
             <Link to="/">Categories</Link>
           </li>
           <li>
-            <Link to={`/category/${categoryId}`}>
-              {getTitleCaseFromSlug(categoryId)}
+            <Link to={`/category/${slugify(data.category)}`}>
+              {getTitleCaseFromSlug(data.category)}
             </Link>
           </li>
           <li>{data.name}</li>

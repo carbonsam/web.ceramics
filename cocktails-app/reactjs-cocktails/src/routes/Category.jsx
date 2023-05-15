@@ -3,7 +3,7 @@ import { getTitleCaseFromSlug } from "../utils/stringUtils";
 
 const getDrinkLink = (x) => (
   <article key={x.id}>
-    <Link to={`./drink/${x.id}`}>{x.name}</Link>
+    <Link to={`/drink/${x.id}`}>{x.name}</Link>
   </article>
 );
 

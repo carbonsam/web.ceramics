@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         loader: ({ params }) => listDrinksForCategory(params.categoryId),
       },
       {
-        path: "/category/:categoryId/drink/:drinkId",
+        path: "/drink/:drinkId",
         element: <Drink />,
         loader: ({ params }) => getDrinkRecipe(params.drinkId),
       },
