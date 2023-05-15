@@ -1,5 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { getTitleCaseFromSlug } from "../../utils/stringUtils";
+import { getTitleCaseFromSlug } from "../utils/stringUtils";
 
 const getDrinkLink = (x) => (
   <article key={x.id}>

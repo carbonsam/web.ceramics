@@ -5,7 +5,12 @@ const Footer = () => (
     <nav>
       <ul>
         <li>
-          <small>A project by <a href="https://samuelschumacher.dev/" target="_blank">Samuel Schumacher</a></small>
+          <small>
+            A project by{" "}
+            <a href="https://samuelschumacher.dev/" target="_blank">
+              Samuel Schumacher
+            </a>
+          </small>
         </li>
       </ul>
     </nav>

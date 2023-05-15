@@ -1,8 +1,9 @@
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getTitleCaseFromSlug } from "../utils/stringUtils";
 
 const getCategoryLink = (x) => (
   <article key={x.id}>
-    <Link to={`/category/${x.id}`}>{x.name}</Link>
+    <Link to={`/category/${x.id}`}>{getTitleCaseFromSlug(x.name)}</Link>
   </article>
 );
 

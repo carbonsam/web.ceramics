@@ -2,11 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
-import Browse from "./routes/browse/index.jsx";
-import Search from "./routes/search/index.jsx";
-import Category from "./routes/category/index.jsx";
-import Drink from "./routes/drink/index.jsx";
-import { getDrinkRecipe, listDrinkCategories, listDrinksForCategory } from "./services/CocktailService.js";
+import Browse from "./routes/Browse.jsx";
+import Search from "./routes/Search.jsx";
+import Category from "./routes/Category.jsx";
+import Drink from "./routes/Drink.jsx";
+import Favorites from "./routes/Favorites.jsx";
+import {
+  getDrinkRecipe,
+  listDrinkCategories,
+  listDrinksForCategory,
+} from "./services/CocktailService.js";
 
 import "@picocss/pico";
 
@@ -20,18 +25,22 @@ const router = createBrowserRouter([
         loader: listDrinkCategories,
       },
       {
-        path: '/category/:categoryId',
+        path: "/category/:categoryId",
         element: <Category />,
         loader: ({ params }) => listDrinksForCategory(params.categoryId),
       },
       {
-        path: '/category/:categoryId/drink/:drinkId',
+        path: "/category/:categoryId/drink/:drinkId",
         element: <Drink />,
         loader: ({ params }) => getDrinkRecipe(params.drinkId),
       },
       {
         path: "/search",
         element: <Search />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
       },
     ],
   },
