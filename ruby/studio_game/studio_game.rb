@@ -1,7 +1,8 @@
-puts "Let's play a game!\n\t3\n\t2\n\t1\n"
-puts "🚀" * 25
+def say_hello(name, health = 100)
+  "I'm #{name.capitalize} with a health of #{health}"
+end
 
-name = "  \n finn \t "
-health = 60
-
-puts "#{name.strip.capitalize.ljust(30, ".")} #{health} health"
+puts say_hello("finn", 60)
+puts say_hello("rosa")
+puts say_hello("tony", 40)
+puts say_hello("lisa", 50)
