@@ -1,3 +1,4 @@
+require 'csv'
 require_relative 'treasure_trove'
 
 class Game
@@ -7,6 +8,26 @@ class Game
   def initialize(title)
     @title = title.upcase
     @players = []
+  end
+
+  def load_players(file_name)
+    CSV.read(file_name).each do |name, health|
+      @players << Player.new(name, health.to_i)
+    end
+  end
+
+  def save_high_scores(file_name = "high_scores.txt")
+    File.open(file_name, "w") do |file|
+      file.puts "#{@title.split(" ").map { |word| word.capitalize }.join(" ")} High Scores:"
+      file.puts high_score_table
+    end
+  end
+
+  def high_score_table
+    @players
+      .sort_by { |player| player.score }
+      .reverse
+      .map { |player| "#{player.name}".ljust(20, ".") + "#{player.points}" }
   end
 
   def add_player(player)
@@ -69,6 +90,6 @@ class Game
     end
 
     puts "\nHigh Scores:"
-    puts sorted_players.map { |player| "#{player.name}".ljust(20, ".") + "#{player.points}" }
+    puts high_score_table
   end
 end

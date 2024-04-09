@@ -2,9 +2,22 @@ require_relative 'lib/studio_game/game'
 require_relative 'lib/studio_game/player'
 
 game = Game.new("winner takes all")
-game.add_player(Player.new("finn", 60))
-game.add_player(Player.new("lucy", 90))
-game.add_player(Player.new("jase"))
-game.add_player(Player.new("alex", 125))
-game.play
-game.print_stats
+default_players = File.join(__dir__, "players.csv")
+game.load_players(ARGV.shift || default_players)
+
+loop do
+  print "\nHow many game rounds? (type 'quit' to exit) "
+  command = gets.chomp.downcase
+
+  case command
+  when /^\d+$/
+    game.play(command.to_i)
+  when "quit"
+    game.print_stats
+    break
+  else
+    puts "Please enter a number or type 'quit' to exit"
+  end
+end
+
+game.save_high_scores
