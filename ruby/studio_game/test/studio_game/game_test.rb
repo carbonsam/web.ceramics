@@ -29,7 +29,7 @@ class GameTest < Minitest::Test
     @game.add_player(@player_1)
 
     @game.stub(:roll_die, 6) do
-      @game.play
+      @game.play(1)
       assert_equal 65, @player_1.health
     end
   end
@@ -38,7 +38,7 @@ class GameTest < Minitest::Test
     @game.add_player(@player_1)
 
     @game.stub(:roll_die, 4) do
-      @game.play
+      @game.play(1)
       assert_equal 50, @player_1.health
     end
   end
@@ -47,7 +47,7 @@ class GameTest < Minitest::Test
     @game.add_player(@player_1)
 
     @game.stub(:roll_die, 2) do
-      @game.play
+      @game.play(1)
       assert_equal 40, @player_1.health
     end
   end

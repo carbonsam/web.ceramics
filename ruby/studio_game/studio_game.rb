@@ -7,3 +7,4 @@ game.add_player(Player.new("lucy", 90))
 game.add_player(Player.new("jase"))
 game.add_player(Player.new("alex", 125))
 game.play
+game.print_stats
