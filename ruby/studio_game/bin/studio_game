@@ -1,16 +1,18 @@
-require_relative 'lib/studio_game/game'
-require_relative 'lib/studio_game/player'
-require_relative 'lib/studio_game/clumsy_player'
-require_relative 'lib/studio_game/berserk_player'
+#!/usr/bin/env ruby
 
-game = Game.new("winner takes all")
+require_relative '../lib/studio_game/game'
+require_relative '../lib/studio_game/player'
+require_relative '../lib/studio_game/clumsy_player'
+require_relative '../lib/studio_game/berserk_player'
+
+game = StudioGame::Game.new("winner takes all")
 default_players = File.join(__dir__, "players.csv")
 game.load_players(ARGV.shift || default_players)
 
-clumsy = ClumsyPlayer.new("klutz")
+clumsy = StudioGame::ClumsyPlayer.new("klutz")
 game.add_player(clumsy)
 
-berserk = BerserkPlayer.new("berserker")
+berserk = StudioGame::BerserkPlayer.new("berserker")
 game.add_player(berserk)
 
 loop do

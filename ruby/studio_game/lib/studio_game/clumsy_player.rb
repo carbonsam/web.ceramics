@@ -1,8 +1,10 @@
 require_relative 'player'
 
-class ClumsyPlayer < Player
+module StudioGame
+  class ClumsyPlayer < Player
 
-  def found_treasure(name, points)
-    super(name, points / 2)
+    def found_treasure(name, points)
+      super(name, points / 2)
+    end
   end
 end
