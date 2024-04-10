@@ -11,9 +11,12 @@ class Game
   end
 
   def load_players(file_name)
-    CSV.read(file_name).each do |name, health|
-      @players << Player.new(name, health.to_i)
+    CSV.read(file_name).each do |line|
+      @players << Player.from_csv(line)
     end
+  rescue Errno::ENOENT
+    puts "Whoops, #{file_name} doesn't exist."
+    exit 1
   end
 
   def save_high_scores(file_name = "high_scores.txt")

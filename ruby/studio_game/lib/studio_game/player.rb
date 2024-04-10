@@ -10,6 +10,14 @@ class Player
 
   def to_s = "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}"
 
+  def self.from_csv(line)
+    name, health = line
+    Player.new(name, Integer(health))
+  rescue ArgumentError
+    puts "Invalid health value #{health}"
+    Player.new(name)
+  end
+
   def drain = @health -= 10
 
   def boost = @health += 15
