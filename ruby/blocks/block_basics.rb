@@ -1,16 +1,37 @@
 require_relative 'flyer'
 
 flyers = []
+flyers << Flyer.new("Larry", "larry@example.com", 4000, :platinum)
+flyers << Flyer.new("Moe", "moe@example.com", 1000)
+flyers << Flyer.new("Curly", "curly@example.com", 3000, :gold)
+flyers << Flyer.new("Shemp", "shemp@example.com", 2000)
 
-1.upto(5) do |x|
-  flyers << Flyer.new("Flyer #{x}", "flyer#{x}@example.com", x * 1000)
-end
+puts "\nFrequent Flyers:"
+puts flyers.select { |x| x.miles_flown >= 3000 }
 
-flyers.each { |f| puts "#{f.name} - #{f.miles_flown} miles" }
+puts "\nNon-Frequent Flyers:"
+puts flyers.reject { |x| x.miles_flown >= 3000 }
 
-sum = 0
-flyers.each { |f| sum += f.miles_flown}
-puts "Total miles flown: #{sum}"
+puts "\nAny Platinum Flyers?"
+puts flyers.any? { |x| x.status == :platinum }
 
-promotions = { "United" => 1.5, "Delta" => 2.0, "Lufthansa" => 2.5 }
-promotions.each { |k, v| puts "Earn #{v}x miles by flying #{k}!" }
+puts "\nFirst Bronze Status:"
+puts flyers.detect { |x| x.status == :bronze }
+
+platinum_flyers, other_flyers = flyers.partition { |x| x.status == :platinum }
+puts "\nPlatinum Flyers:"
+puts platinum_flyers
+puts "Other Flyers:"
+puts other_flyers
+
+puts "\nName Tags:"
+puts flyers.map { |x| "#{x.name} (#{x.status.upcase})" }
+
+puts "\nDistance Flown by Flyer:"
+puts flyers.map { |x| "#{x.name}: #{x.miles_flown * 1.6} kilometers" }
+
+puts "\nTotal Miles Flown:"
+puts flyers.reduce(0) { |sum, x| sum + x.miles_flown }
+
+puts "\nTotal Kilometers Flown:"
+puts flyers.reduce(0) { |sum, x| sum + x.miles_flown * 1.6 }
