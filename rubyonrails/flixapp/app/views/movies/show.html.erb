@@ -1,0 +1,16 @@
+<section>
+  <hgroup>
+    <h1><%= @movie.title %></h1>
+    <p><%= year_released(@movie) %></p>
+  </hgroup>
+  <p><%= @movie.description %></p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Total Gross:</th>
+        <td><%= total_gross(@movie) %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to("Edit Movie", edit_movie_path, role: "button", class: "secondary") %>
+</section>

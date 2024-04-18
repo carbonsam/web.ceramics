@@ -1,0 +1,10 @@
+<% @movies.each do |movie| %>
+  <section>
+    <hgroup>
+      <h2><%= link_to movie.title, movie %></h2>
+      <p><%= total_gross(movie) %></p>
+    </hgroup>
+    <p><%= movie.description.truncate(150, separator: ' ') %></p>
+    <hr/>
+  </section>
+<% end %>

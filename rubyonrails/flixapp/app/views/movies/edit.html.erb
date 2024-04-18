@@ -1,0 +1,29 @@
+<section>
+  <hgroup>
+    <h1>Editing <%= @movie.title %></h1>
+    <p>Update this movie with the form below.</p>
+  </hgroup>
+
+  <article>
+    <%= form_with(model: @movie) do |form| %>
+      <fieldset>
+        <%= form.label(:title) %>
+        <%= form.text_field(:title) %>
+
+        <%= form.label(:description) %>
+        <%= form.text_area(:description, rows: 3) %>
+
+        <%= form.label(:rating) %>
+        <%= form.text_field(:rating) %>
+
+        <%= form.label(:released_on) %>
+        <%= form.date_field(:released_on) %>
+
+        <%= form.label(:total_gross) %>
+        <%= form.number_field(:total_gross) %>
+      </fieldset>
+
+      <%= form.submit %>
+    <% end %>
+  </article>
+</section>

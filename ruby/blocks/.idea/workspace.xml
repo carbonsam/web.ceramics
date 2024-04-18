@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84235fbd-3bde-469e-9aaf-90fba512b8fd" name="Changes" comment="Ruby Block Course: Lesson 5">
+      <change afterPath="$PROJECT_DIR$/songs.rb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2exgJKVuVEnhrwDvehKNjUUYJxt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Ruby.block_basics.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.deal.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.scratch.executor&quot;: &quot;Run&quot;,
+    &quot;Ruby.songs.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/samuel/Code/web.ceramics/ruby/blocks&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-RM-241.14494.234" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84235fbd-3bde-469e-9aaf-90fba512b8fd" name="Changes" comment="" />
+      <created>1712851569237</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712851569237</updated>
+      <workItem from="1712851570401" duration="12788000" />
+      <workItem from="1712957943587" duration="341000" />
+      <workItem from="1713376274691" duration="25000" />
+    </task>
+    <task id="LOCAL-00001" summary="Ruby Block Course: Lesson 2">
+      <option name="closed" value="true" />
+      <created>1712854985625</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712854985625</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Ruby Block Course: Lesson 3">
+      <option name="closed" value="true" />
+      <created>1712858145647</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712858145647</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Ruby Block Course: Lesson 4">
+      <option name="closed" value="true" />
+      <created>1712860465477</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712860465478</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ruby Block Course: Lesson 5">
+      <option name="closed" value="true" />
+      <created>1712867538077</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712867538077</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ruby Block Course: Lesson 2" />
+    <MESSAGE value="Ruby Block Course: Lesson 3" />
+    <MESSAGE value="Ruby Block Course: Lesson 4" />
+    <MESSAGE value="Ruby Block Course: Lesson 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ruby Block Course: Lesson 5" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/blocks@songs.rcov" NAME="songs Coverage Results" MODIFIED="1712869489439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blocks" />
+    <SUITE FILE_PATH="coverage/blocks@block_basics.rcov" NAME="block_basics Coverage Results" MODIFIED="1712860444293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blocks" />
+    <SUITE FILE_PATH="coverage/blocks@scratch.rcov" NAME="scratch Coverage Results" MODIFIED="1712867238823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blocks" />
+    <SUITE FILE_PATH="coverage/blocks@deal.rcov" NAME="deal Coverage Results" MODIFIED="1712867498236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="blocks" />
+  </component>
+</project>
