@@ -11,27 +11,12 @@
   </head>
 
   <body>
-    <nav class="container">
-      <ul>
-        <li>
-          <h1 class="mb-0">
-            <%= link_to(image_tag("logo.png", alt: "clapper with the app's name, \"Flix\", to the right of it"), root_path) %>
-          </h1>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <%= link_to("All Movies", movies_path) %>
-        </li>
-      </ul>
-    </nav>
+    <%= render("layouts/header") %>
 
     <main class="container">
       <%= yield %>
     </main>
 
-    <footer class="container">
-      <p>Flix App copyright &copy; <%= Time.now.year %></p>
-    </footer>
+    <%= render("layouts/footer") %>
   </body>
 </html>

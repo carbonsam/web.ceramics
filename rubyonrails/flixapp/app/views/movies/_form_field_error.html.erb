@@ -1,0 +1,4 @@
+<%= yield(errors[key].empty? ? nil : true) %>
+<% unless errors[key].empty? %>
+  <small><%= "#{key.to_s.gsub("_", " ").capitalize} #{errors[key].first}" %></small>
+<% end %>

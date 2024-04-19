@@ -1,10 +1,15 @@
 <% @movies.each do |movie| %>
-  <section>
+  <article>
+    <%= image_tag(movie.image_file_name) %>
+
     <hgroup>
-      <h2><%= link_to movie.title, movie %></h2>
+      <h2><%= link_to(movie.title, movie) %></h2>
       <p><%= total_gross(movie) %></p>
     </hgroup>
     <p><%= movie.description.truncate(150, separator: ' ') %></p>
-    <hr/>
-  </section>
+  </article>
 <% end %>
+
+<hr/>
+
+<%= link_to("Create Movie", new_movie_path, role: "button") %>

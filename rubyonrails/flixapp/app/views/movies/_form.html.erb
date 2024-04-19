@@ -1,0 +1,52 @@
+<%= form_with(model: movie) do |form| %>
+
+  <fieldset>
+    <%= render("form_field_error", key: :title, errors: movie.errors) do |is_invalid| %>
+      <%= form.label(:title) %>
+      <%= form.text_field(:title, autofocus: true, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <%= render("form_field_error", key: :description, errors: movie.errors) do |is_invalid| %>
+      <%= form.label(:description) %>
+      <%= form.text_area(:description, rows: 3, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <div class="grid">
+      <div>
+        <%= render("form_field_error", key: :rating, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:rating) %>
+          <%= form.select(:rating, Movie::RATINGS, { prompt: "Pick one" }, { "aria-invalid": is_invalid }) %>
+        <% end %>
+
+        <%= render("form_field_error", key: :released_on, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:released_on) %>
+          <%= form.date_field(:released_on, "aria-invalid": is_invalid) %>
+        <% end %>
+
+        <%= render("form_field_error", key: :total_gross, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:total_gross) %>
+          <%= form.number_field(:total_gross, "aria-invalid": is_invalid) %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= render("form_field_error", key: :director, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:director) %>
+          <%= form.text_field(:director, "aria-invalid": is_invalid) %>
+        <% end %>
+
+        <%= render("form_field_error", key: :duration, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:duration) %>
+          <%= form.text_field(:duration, "aria-invalid": is_invalid) %>
+        <% end %>
+
+        <%= render("form_field_error", key: :image_file_name, errors: movie.errors) do |is_invalid| %>
+          <%= form.label(:image_file_name) %>
+          <%= form.text_field(:image_file_name, "aria-invalid": is_invalid) %>
+        <% end %>
+      </div>
+    </div>
+  </fieldset>
+
+  <%= form.submit %>
+<% end %>
