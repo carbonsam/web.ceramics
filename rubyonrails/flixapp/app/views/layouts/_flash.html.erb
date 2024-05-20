@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+  <article class="pico-background-green-500">
+    <%= flash[:notice] %>
+  </article>
+<% end %>
+
+<% if flash[:alert] %>
+  <article class="pico-background-red-500">
+    <%= flash[:alert] %>
+  </article>
+<% end %>
