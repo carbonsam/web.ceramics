@@ -1,0 +1,6 @@
+<h2>Reviews for <%= @movie.title %></h2>
+<ul>
+  <% @reviews.each do |r| %>
+    <li><%= r.stars %> stars by <%= r.name %>: <%= r.comment %> (<%= "about #{time_ago_in_words(r.created_at)} ago" %>)</li>
+  <% end %>
+</ul>

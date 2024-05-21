@@ -16,6 +16,7 @@
       </tbody>
     </table>
 
+    <%= link_to("Reviews", movie_reviews_path(@movie), role: "button") %>
     <%= link_to("Edit", edit_movie_path, role: "button", class: "secondary") %>
     <%= link_to("Delete", @movie, role: "button", class: "secondary", data: {
       turbo_method: :delete,
