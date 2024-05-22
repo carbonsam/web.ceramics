@@ -17,5 +17,5 @@
     <% end %>
   </fieldset>
 
-  <%= form.submit %>
+  <%= form.submit("#{model.new_record? ? 'Create' : 'Update'} Account") %>
 <% end %>
