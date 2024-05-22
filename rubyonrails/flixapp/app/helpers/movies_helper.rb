@@ -12,4 +12,14 @@ module MoviesHelper
   def year_released(movie)
     movie.released_on.year
   end
+
+  def average_stars(movie)
+    avg = movie.average_stars
+
+    if avg.zero?
+      content_tag(:strong, 'No reviews yet')
+    else
+      "#{avg.round} stars"
+    end
+  end
 end
