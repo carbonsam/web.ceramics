@@ -1,0 +1,21 @@
+<%= form_with(model: model) do |form| %>
+
+  <fieldset>
+    <%= render("shared/form_field_error", key: :name, errors: model.errors) do |is_invalid| %>
+      <%= form.label(:name) %>
+      <%= form.text_field(:name, autofocus: true, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <%= render("shared/form_field_error", key: :email, errors: model.errors) do |is_invalid| %>
+      <%= form.label(:email) %>
+      <%= form.text_field(:email, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <%= render("shared/form_field_error", key: :password, errors: model.errors) do |is_invalid| %>
+      <%= form.label(:password) %>
+      <%= form.password_field(:password, "aria-invalid": is_invalid) %>
+    <% end %>
+  </fieldset>
+
+  <%= form.submit %>
+<% end %>

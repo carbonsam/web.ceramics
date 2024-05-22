@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :users
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   root 'movies#index'
@@ -9,4 +8,7 @@ Rails.application.routes.draw do
   resources :movies do
     resources :reviews
   end
+
+  resources :users
+  get "signup" => "users#new"
 end
