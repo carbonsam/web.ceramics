@@ -1,0 +1,10 @@
+<section>
+  <hgroup>
+    <h1>Create a Review</h1>
+    <p>Write a new review for <%= @movie.title %> with the form below.</p>
+  </hgroup>
+
+  <article>
+    <%= render("form", model: [@movie, @review]) %>
+  </article>
+</section>

@@ -1,0 +1,21 @@
+<%= form_with(model: model) do |form| %>
+
+  <fieldset>
+    <%= render("shared/form_field_error", key: :name, errors: @review.errors) do |is_invalid| %>
+      <%= form.label(:name) %>
+      <%= form.text_field(:name, autofocus: true, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <%= render("shared/form_field_error", key: :comment, errors: @review.errors) do |is_invalid| %>
+      <%= form.label(:comment) %>
+      <%= form.text_area(:comment, rows: 3, "aria-invalid": is_invalid) %>
+    <% end %>
+
+    <%= render("shared/form_field_error", key: :stars, errors: @review.errors) do |is_invalid| %>
+      <%= form.label(:stars) %>
+      <%= form.select(:stars, [1,2,3,4,5], { prompt: "Pick one" }, { "aria-invalid": is_invalid }) %>
+    <% end %>
+  </fieldset>
+
+  <%= form.submit %>
+<% end %>
