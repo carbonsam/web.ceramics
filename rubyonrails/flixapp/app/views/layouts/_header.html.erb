@@ -13,12 +13,18 @@
       </li>
     </ul>
     <ul>
-      <li>
-        <%= link_to("Sign In", signin_path, role: 'button') %>
-      </li>
-      <li>
-        <%= link_to("Sign Up", signup_path, role: 'button') %>
-      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to(@current_user.name, @current_user) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to("Sign In", signin_path, role: 'button') %>
+        </li>
+        <li>
+          <%= link_to("Sign Up", signup_path, role: 'button') %>
+        </li>
+      <% end %>
     </ul>
   </nav>
 </header>
