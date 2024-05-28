@@ -5,13 +5,13 @@
   </hgroup>
 
   <article>
-    <%= form_with(url: new_session_path) do |f| %>
+    <%= form_with(url: session_path) do |f| %>
 
       <%= f.label("Email") %>
       <%= f.text_field(:email, autofocus: true) %>
 
       <%= f.label("Password") %>
-      <%= f.text_field(:password) %>
+      <%= f.password_field(:password) %>
 
       <%= f.submit %>
 
