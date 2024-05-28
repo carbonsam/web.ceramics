@@ -43,6 +43,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.destroy
+      session[:user_id] = nil
       redirect_to root_path, status: :see_other, alert: 'User was successfully destroyed.'
     else
       render :edit, status: :unprocessable_entity
