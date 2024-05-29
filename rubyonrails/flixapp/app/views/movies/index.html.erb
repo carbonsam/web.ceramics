@@ -12,4 +12,6 @@
 
 <hr/>
 
-<%= link_to("Create Movie", new_movie_path, role: "button") %>
+<% if current_user_admin? %>
+  <%= link_to("Create Movie", new_movie_path, role: "button") %>
+<% end %>
