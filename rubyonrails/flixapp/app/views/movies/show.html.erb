@@ -30,6 +30,15 @@
       </ul>
     <% end %>
 
+    <% if @genres.present? %>
+      <h3>Genres</h3>
+      <ul>
+        <% @genres.each do |genre| %>
+          <li><%= genre.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <%= link_to("Write a review", new_movie_review_path(@movie), role: "button") %>
     <%= link_to("Reviews", movie_reviews_path(@movie), role: "button") %>
 

@@ -46,6 +46,11 @@
         <% end %>
       </div>
     </div>
+
+    <%= render("shared/form_field_error", key: :genres, errors: model.errors) do |is_invalid| %>
+      <%= form.label(:genres) %>
+      <%= form.collection_check_boxes(:genre_ids, Genre.order(:name), :id, :name) %>
+    <% end %>
   </fieldset>
 
   <%= form.submit("#{model.new_record? ? 'Create' : 'Update'} Movie") %>
