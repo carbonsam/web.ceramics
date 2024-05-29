@@ -2,6 +2,9 @@
 
 class UsersController < ApplicationController
 
+  before_action :require_signin, except: %i[new create]
+  before_action :require_correct_user, only: %i[edit update destroy]
+
   def index
     @users = User.all
   end
@@ -14,9 +17,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def create
     @user = User.new(user_params)
@@ -30,8 +31,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-
     if @user.update(user_params)
       redirect_to user_path(@user), notice: 'User was successfully updated.'
     else
@@ -40,8 +39,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-
     if @user.destroy
       session[:user_id] = nil
       redirect_to root_path, status: :see_other, alert: 'User was successfully destroyed.'
@@ -51,6 +48,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def require_correct_user
+    @user = User.find(params[:id])
+    return if current_user?(@user)
+
+    redirect_to(root_path)
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

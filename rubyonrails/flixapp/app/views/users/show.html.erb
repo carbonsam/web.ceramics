@@ -3,8 +3,10 @@
   <p><%= @user.email %></p>
 </hgroup>
 
-<%= link_to('Edit Account', edit_user_path, role: 'button') %>
-<%= link_to('Delete Account', @user, class: 'secondary', role: 'button', data: {
-  turbo_method: :delete,
-  turbo_confirm: "Are you sure?",
-}) %>
+<% if current_user?(@user) %>
+  <%= link_to('Edit Account', edit_user_path, role: 'button') %>
+  <%= link_to('Delete Account', @user, class: 'secondary', role: 'button', data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?",
+  }) %>
+<% end %>
