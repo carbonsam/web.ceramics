@@ -10,3 +10,21 @@
     turbo_confirm: "Are you sure?",
   }) %>
 <% end %>
+
+<% if @reviews.present? %>
+  <article>
+    <h3>Reviews</h3>
+    <ul>
+      <% @reviews.each do |r| %>
+        <li>
+          <p><%= r.comment %></p>
+          <%= link_to(r.movie.title, r.movie) %>
+          &bull;
+          <%= "#{r.stars} stars" %>
+          &bull;
+          (<%= "#{time_ago_in_words(r.created_at)} ago" %>)
+        </li>
+      <% end %>
+    </ul>
+  </article>
+<% end %>
