@@ -1,15 +1,17 @@
-<hgroup>
-  <h1><%= @user.name %></h1>
-  <p><%= @user.email %></p>
-</hgroup>
+<article>
+  <hgroup>
+    <h1><%= @user.name %></h1>
+    <p><%= @user.email %></p>
+  </hgroup>
 
-<% if current_user?(@user) %>
-  <%= link_to('Edit Account', edit_user_path, role: 'button') %>
-  <%= link_to('Delete Account', @user, class: 'secondary', role: 'button', data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?",
-  }) %>
-<% end %>
+  <% if current_user?(@user) %>
+    <%= link_to('Edit Account', edit_user_path, role: 'button') %>
+    <%= link_to('Delete Account', @user, class: 'secondary', role: 'button', data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?",
+    }) %>
+  <% end %>
+</article>
 
 <% if @reviews.present? %>
   <article>
@@ -24,6 +26,17 @@
           &bull;
           (<%= "#{time_ago_in_words(r.created_at)} ago" %>)
         </li>
+      <% end %>
+    </ul>
+  </article>
+<% end %>
+
+<% if @favorite_movies.present? %>
+  <article>
+    <h3>Favorite Movies</h3>
+    <ul>
+      <% @favorite_movies.each do |movie| %>
+        <li><%= link_to(movie.title, movie) %></li>
       <% end %>
     </ul>
   </article>

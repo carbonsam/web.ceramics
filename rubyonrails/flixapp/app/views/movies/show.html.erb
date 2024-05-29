@@ -10,6 +10,8 @@
 
     <%= average_stars(@movie) %>
 
+    <%= favorite_toggle_button(@movie, @favorite) %>
+
     <table>
       <tbody>
         <tr>
@@ -18,6 +20,15 @@
         </tr>
       </tbody>
     </table>
+
+    <% if @fans.present? %>
+      <h3>Fans</h3>
+      <ul>
+        <% @fans.each do |fan| %>
+          <li><%= link_to(fan.name, fan) %></li>
+        <% end %>
+      </ul>
+    <% end %>
 
     <%= link_to("Write a review", new_movie_review_path(@movie), role: "button") %>
     <%= link_to("Reviews", movie_reviews_path(@movie), role: "button") %>
