@@ -22,8 +22,7 @@ class MoviesController < ApplicationController
     @genres = @movie.genres
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @movie.update(movie_attributes)
