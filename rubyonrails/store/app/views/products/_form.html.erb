@@ -1,0 +1,15 @@
+<%= form_with(model: product) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+
+    <%= form.label :inventory_count, style: "display: block" %>
+    <%= form.number_field :inventory_count %>
+
+    <%= form.label :featured_image, style: "display: block" %>
+    <%= form.file_field :featured_image, accept: "image/*" %>
+
+    <%= form.label :description, style: "display: block" %>
+    <%= form.rich_text_area :description %>
+
+    <%= form.submit %>
+<% end %>
